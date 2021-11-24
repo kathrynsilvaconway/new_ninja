@@ -1,0 +1,27 @@
+#wrapper {
+    height: 800px;
+    width: 655px;
+    background-color: chartreuse;
+    padding: 20px;
+}
+.locationbox {
+    height: 150px;
+    width: 150px;
+    background-color: violet;
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+}
+h1 {
+    text-align: center;
+}
+
+.button {
+    background-color: gold;
+}
+#activity {
+    width: 600px;
+    border: solid black 2px;
+    background-color: khaki;
+
+}
