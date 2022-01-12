@@ -22,7 +22,7 @@ def process_money(request):
         if location == 'farm':
             current_amount = round(random.random() * 10 + 10)
             total_amount += current_amount
-            request.session['gold'] = current_amount
+            request.session['gold'] += current_amount
             request.session['activities'] = total_amount
             request.session['location'] = 'farm'
             date_format='%m/%d/%Y %H:%M:%S %Z'
@@ -36,7 +36,7 @@ def process_money(request):
         if location == 'cave':
             current_amount = round(random.random() * 5 + 5)
             total_amount += current_amount
-            request.session['gold'] = current_amount
+            request.session['gold'] += current_amount
             request.session['activities'] = total_amount
             request.session['location'] = 'cave'
             date_format='%m/%d/%Y %H:%M:%S %Z'
@@ -50,7 +50,7 @@ def process_money(request):
         if location == 'house':
             current_amount = round(random.random() * 2 + 3)
             total_amount += current_amount
-            request.session['gold'] = current_amount
+            request.session['gold'] += current_amount
             request.session['activities'] = total_amount
             request.session['location'] = 'house'
             date_format='%m/%d/%Y %H:%M:%S %Z'
@@ -64,7 +64,7 @@ def process_money(request):
         if location == 'casino':
             current_amount = round(random.random() * 0 + 50)
             total_amount += current_amount
-            request.session['gold'] = current_amount
+            request.session['gold'] += current_amount
             request.session['activities'] = total_amount
             request.session['location'] = 'house'
             date_format='%m/%d/%Y %H:%M:%S %Z'
@@ -77,5 +77,8 @@ def process_money(request):
             request.session['history'] = history 
     return redirect('/')
 
+def reset(request):
+    request.session.flush()
+    return redirect('/')
 
 # Create your views here.
